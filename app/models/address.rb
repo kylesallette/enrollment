@@ -1,4 +1,4 @@
-class address < ApplicationRecord
+class Address < ApplicationRecord
 belongs_to :student
 
 

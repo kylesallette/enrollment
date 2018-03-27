@@ -4,6 +4,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @address = Address.find(params[:id])
   end
 
   def index
@@ -48,7 +49,7 @@ class StudentsController < ApplicationController
 
 
   private
-  
+
   def student_params
      params.require(:student).permit(:name)
   end
