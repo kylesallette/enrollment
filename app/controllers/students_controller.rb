@@ -21,8 +21,24 @@ class StudentsController < ApplicationController
     redirect_to student_path(@student)
   else
     render :new
+    end
   end
-end
+
+  def edit
+    @student = Student.find(params[:id])
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    @student.update(student_params)
+      if @student.save
+        flash[:success] = "#{@student.name} edited!"
+        redirect_to student_path(@student)
+      else
+        render :edit
+        flash[:success] = "Something went wrong!"
+      end
+    end
 
 
 
