@@ -5,7 +5,8 @@ require 'rails_helper'
       it "they click on students name"  do
       student1 = Student.create!(name: "kyle")
 
-       new_student_address_path(student1.id)
+       new_student_address_path(student1)
+       save_and_open_page
 
       fill_in("Description", :with => 'fun')
       fill_in('Street', :with => 'Percy')

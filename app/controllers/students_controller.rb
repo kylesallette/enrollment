@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    @address = Address.find(params[:id])
+    @address = Address.where(params[:id] == @student.id)
   end
 
   def index

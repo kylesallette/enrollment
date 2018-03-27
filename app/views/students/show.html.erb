@@ -8,10 +8,13 @@
 <%=@student.name %>
 
 <h3> address info </h3>
-<%=@address.description %><br>
-<%=@address.street %><br>
-<%=@address.city %><br>
-<%=@address.state %><br>
-<%=@address.zipcode %><br>
-<h3> Student name </h3>
-<%=@address.student.name %><br>
+<% @address.each do |ad| %>
+
+Description:<%=ad.description %><br>
+Street:<%=ad.street %><br>
+City:<%=ad.city %><br>
+State:<%=ad.state %><br>
+Zipcode:<%=ad.zipcode %><br><br>
+
+
+<% end  %>
